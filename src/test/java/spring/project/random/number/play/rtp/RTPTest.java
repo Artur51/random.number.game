@@ -1,19 +1,18 @@
 package spring.project.random.number.play.rtp;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.List;
-import java.util.function.Predicate;
-
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import spring.project.random.number.play.pojo.GameTurn;
 import spring.project.random.number.play.pojo.PlayerData;
 import spring.project.random.number.play.services.GameCalculationService;
 import spring.project.random.number.play.services.PlayerService;
+
+import java.util.List;
+import java.util.function.Predicate;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class RTPTest {
@@ -68,7 +67,6 @@ public class RTPTest {
         playerData.setLoseCount(serverWin);
         playerData.setWinRoundsPercent(winRoundsPercent);
         playerData.setReturnToPlayerPercent(returnToPlayer);
-
 
     }
 }

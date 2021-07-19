@@ -1,7 +1,10 @@
 package spring.project.random.number.play.rtp;
 
-import lombok.Getter;
-import lombok.Setter;
+import spring.project.random.number.play.pojo.GameTurn;
+import spring.project.random.number.play.pojo.PlayerData;
+import spring.project.random.number.play.services.GameCalculationService;
+import spring.project.random.number.play.services.PlayerService;
+import spring.project.random.number.play.utils.Utils;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,19 +14,71 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import spring.project.random.number.play.pojo.GameTurn;
-import spring.project.random.number.play.pojo.PlayerData;
-import spring.project.random.number.play.services.GameCalculationService;
-import spring.project.random.number.play.services.PlayerService;
-import spring.project.random.number.play.utils.Utils;
-
-@Setter
-@Getter
 
 public class RTPTestWorker {
     ExecutorService ex;
     List<GameTurn> gameData = Collections.synchronizedList(new ArrayList());
     PlayerData playerData = new PlayerData();
+
+    public List<GameTurn> getGameData() {
+        return gameData;
+    }
+
+    public GameCalculationService getService() {
+        return service;
+    }
+
+    public void setService(GameCalculationService service) {
+        this.service = service;
+    }
+
+    public PlayerData getPlayerData() {
+        return playerData;
+    }
+
+    public long getTotalTime() {
+        return totalTime;
+    }
+
+    public PlayerService getPlayerService() {
+        return playerService;
+    }
+
+    public void setPlayerService(PlayerService playerService) {
+        this.playerService = playerService;
+    }
+
+    public int getCores() {
+        return cores;
+    }
+
+    public void setCores(int cores) {
+        this.cores = cores;
+    }
+
+    public int getGenerateMinimumBet() {
+        return generateMinimumBet;
+    }
+
+    public void setGenerateMinimumBet(int generateMinimumBet) {
+        this.generateMinimumBet = generateMinimumBet;
+    }
+
+    public int getGenerateMaximumBet() {
+        return generateMaximumBet;
+    }
+
+    public void setGenerateMaximumBet(int generateMaximumBet) {
+        this.generateMaximumBet = generateMaximumBet;
+    }
+
+    public AtomicInteger getPlayRounds() {
+        return playRounds;
+    }
+
+    public void setPlayRounds(AtomicInteger playRounds) {
+        this.playRounds = playRounds;
+    }
 
     GameCalculationService service;
     PlayerService playerService;
